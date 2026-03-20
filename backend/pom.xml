@@ -28,8 +28,9 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
-		<oracle.version> 23.9.0.25.07</oracle.version>
+		<oracle.version>23.3.0.23.09</oracle.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -47,19 +48,30 @@
 
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
-			<artifactId>ojdbc11</artifactId>
-			<scope>runtime</scope>
+			<artifactId>ojdbc11-production</artifactId>
+			<version>${oracle.version}</version>
+			<type>pom</type>
 		</dependency>
+
+    <!-- Librerías de Seguridad para la Wallet (Requieren versión explícita) -->
+		<dependency>
+			<groupId>com.oracle.database.security</groupId>
+			<artifactId>oraclepki</artifactId>
+			<version>${oracle.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
@@ -74,11 +86,10 @@
                 <artifactId>ojdbc11-production</artifactId>
                 <version>${oracle.version}</version>
                 <type>pom</type>
-                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
-	
+
 	<build>
 		<plugins>
 			<plugin>

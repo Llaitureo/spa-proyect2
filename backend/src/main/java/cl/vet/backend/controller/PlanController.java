@@ -75,7 +75,7 @@ public class PlanController {
         return planRepository.findById(id).orElseThrow(() -> new RuntimeException("Plan no encontrado"));
     }
 
-      @Operation(summary="Creación de un paciente" , description="Crea un paciente para añadirlo a la lista.")
+    @Operation(summary="Creación de un paciente" , description="Crea un paciente para añadirlo a la lista.")
     @ApiResponses( value= {
         @ApiResponse(responseCode = "200", description = "Plan creado con éxito.",
             content = @Content(mediaType = "application/json",
@@ -90,7 +90,7 @@ public class PlanController {
             content = @Content(mediaType = "application/json",
                     examples = @ExampleObject(name = "EjemploPlanInvalido", 
                         summary = "Ejemplo de plan no válido",
-                            value = "{\"nombre\": \"Plan Deluxe\",\"descripcion\": \"\", \"precio\": 10000}"
+                            value = "{\"nombre\": \"Plan Deluxe\",\"descripcion\": \"\", \"precio\": 10000,0}"
                                     )
                                 )
                             )
@@ -116,7 +116,7 @@ public class PlanController {
             content = @Content(mediaType = "application/json",
                     examples = @ExampleObject(name = "EjemploPlanInvalido", 
                         summary = "Ejemplo de plan no válido",
-                            value = "{\"nombre\": \"Plan Deluxe\",\"descripcion\": \"Plan para llorar\", \"precio\": 10000}"
+                            value = "{\"nombre\": \"Plan Deluxe\",\"descripcion\": \"Plan para llorar\", \"precio\": 10000,0}"
                                     )
                                 )
                             ),
@@ -131,7 +131,7 @@ public class PlanController {
             
                         }
                     )
-    @PutMapping("path/{id}")
+    @PutMapping("/{id}")
     public Plan putPlan(@PathVariable Long id, @RequestBody Plan plan) {
         Plan existingPlan = planRepository.findById(id).orElseThrow(() -> new RuntimeException("Plan no encontrado"));
 
