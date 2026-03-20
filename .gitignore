@@ -1,0 +1,11 @@
+**/wallet/
+**/app/Wallet/
+*.sso
+*.p12
+*.ora
+.env
+.idea/
+.vscode/
+*.iml
+target/
+
