@@ -1,0 +1,5 @@
+**/wallet/
+.git
+.env
+target/
+node_modules/

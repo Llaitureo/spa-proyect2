@@ -1,0 +1,18 @@
+services:
+  spa-service:
+    build: 
+      context: ./backend
+      dockerfile: .Dockerfile
+    container_name: spa-backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend/app/wallet:/app/wallet:ro
+    environment:
+      - TNS_ADMIN=/app/wallet
+      - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@spaproyect22_medium?TNS_ADMIN=/app/wallet
+      - SPRING_DATASOURCE_USERNAME=${DB_USERNAME}
+      - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD}
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=oracle.jdbc.OracleDriver
+    env_file:
+      - .env
