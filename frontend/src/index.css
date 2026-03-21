@@ -1,0 +1,175 @@
+/* Algunos ni sirven, solo me calenté la cabeza..*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e4c7fd;
+}
+.container-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    transition: background-color 0.5s ease;
+    
+}
+
+.container-principal h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-mensajes{
+    h1{
+        background-color: #943bdd;
+        border-radius: 10px;
+        color: rgb(247, 241, 252);
+        padding: 10px;
+    }
+    p{
+        padding: 12px;
+        color: #9b3cee;
+    }
+}
+
+.container-planes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    list-style: none;
+    padding: 10px;  
+    margin: 20px auto;
+    width: 100%; 
+    justify-content: center;
+}
+
+.container-planes .plan{
+    background: #eae3ff;
+    color: #9b3cee;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(41, 14, 56, 0.1);
+    h2{
+        background-color: #943bdd;
+        color: rgb(247, 241, 252);
+        padding: 10px;
+        border-radius: 10px;
+    }
+    p{
+        background-color: #eae3ff;
+    }
+    strong{
+        background-color: #eae3ff;
+    }
+}
+
+.container-planes .plan:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(79, 7, 117, 0.2);
+    transition: all 0.3s ease;
+}
+
+.container-planes .plan button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background: #c53ce7;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transform: translateY(5px);
+
+}
+
+.container-planes .plan button:hover {
+    box-shadow: 0 8px 16px rgba(197, 60, 231, 0.2);
+    transition: all 0.3s ease;
+    transform: translateY(10px);
+}
+
+
+.container-recargar{
+    color: #9b3cee;
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    button{
+        background-color: #943bdd;
+        color: rgb(247, 241, 252);
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.container-recargar button:hover {
+    box-shadow: 0 8px 16px rgba(212, 0, 255, 0.2);
+    transition: all 0.3s ease;
+    transform: translateY(-5px);
+}
+
+.container-principal.status-error{
+    background-color: #efd3ff;
+    h1{
+        background-color: #efd3ff;
+        color: rgb(221, 47, 47);
+        border-radius: 0%;
+    }
+}
+
+.container-principal.status-error .container-mensajes{
+    .error{
+        color: #c0392b;
+        padding: 10px;
+        strong{
+            background-color: #f5caca;
+        }
+
+    }
+}
+
+.error-box {
+    background: #f5caca;
+    border: 1px solid #e74c3c;
+    color: #c0392b;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p{
+        background-color: #f5caca;
+        color: #c0392b;
+    }
+}
+
+.error-box button {
+    background: #e74c3c;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    
+}
+
+.error-box button:hover {
+    box-shadow: 0 8px 16px rgba(255, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
