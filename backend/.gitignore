@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### por las puras ###
+**/resources/application-test.properties

@@ -1,5 +1,5 @@
 services:
-  spa-service:
+  spa-backend:
     build: 
       context: ./backend
       dockerfile: .Dockerfile
@@ -16,3 +16,10 @@ services:
       - SPRING_DATASOURCE_DRIVER_CLASS_NAME=oracle.jdbc.OracleDriver
     env_file:
       - .env
+  spa-frontend:
+    build: 
+      context: ./frontend
+      dockerfile: .Dockerfile
+    container_name: spa-frontend
+    ports:
+      - "3000:80"
