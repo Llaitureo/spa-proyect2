@@ -26,9 +26,10 @@ Este backend está hecho con:
 ### TEST
 
 - Para este módulo, se requiere **XAMPP**:
-    1- **Recomendado**: En el backend, 'application.properties' cambia el profile a test
+
+    1. **Recomendado**: En el backend, 'application.properties' cambia el profile a test
     2. Abre XAMPP e inicia Apache y Mysql.
-    3. Luego de iniciar los atributos de XAMPP, Crea una nueva Database llamada spa_proyect22 (Entra a la opción admin de XAMPP en la altura de Mysql).
+    3. Luego de iniciar los atributos de XAMPP, Crea una nueva Database llamada spa_proyect22 (Entra a la opción admin de XAMPP   en la altura de Mysql).
     4. inicia 'BackendApplication.java' que esta dentro de las carpetas de backend.
     5. **Recomendación**: Usa postman para crear los objetos para probar la página.
     6. **Recomendación**: Guiate con el Swagger -> [http://localhost:8080/doc/swagger-ui.html](http://localhost:8080/doc/swagger-ui.html)
