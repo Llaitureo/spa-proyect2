@@ -10,7 +10,30 @@ on:
 
 #jobs: trabajos a ejecutar
 jobs:
+  front-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+    
+    - name: Instalar dependencias
+      run: npm install
+    
+    - name: Ejecutar tests del frontend
+      # La variable CI=true es vital para que React no se quede esperando en la consola
+      run: npm run test
+      env:
+        CI: true
   front-build:
+    needs: front-test
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -53,7 +76,7 @@ jobs:
           java-version: '25'
           distribution: 'temurin'
           cache: maven
-      - name: Ejecutar test
+      - name: Ejecutar test del backend
         run: mvn clean test -Dspring.profiles.active=test
   back-build:
     needs: back-test
