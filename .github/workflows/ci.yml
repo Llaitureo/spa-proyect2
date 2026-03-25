@@ -35,6 +35,15 @@ jobs:
     defaults:
       run:
         working-directory: ./backend
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+          MYSQL_DATABASE: spa_proyect22
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping -proot" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - name: Checkout repository (git clone)
         uses: actions/checkout@v4
@@ -45,7 +54,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Ejecutar test
-        run: mvn clean test
+        run: mvn clean test -Dspring.profiles.active=test
   back-build:
     needs: back-test
     runs-on: ubuntu-latest
