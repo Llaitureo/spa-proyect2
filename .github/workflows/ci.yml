@@ -23,7 +23,7 @@ jobs:
       - name: Setup node (instalar node)
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
       
       - name: install dependency
         run: npm install
@@ -36,7 +36,7 @@ jobs:
       run:
         working-directory: ./backend
     services:
-      mysql:
+      mysql: #Crea un container con las características del mysql para levantar los test dependientes"
         image: mysql:8.0
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
